@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Laughly</string>
+    <!-- Custom strings: -->
+    <string name="label_inspire">Get inspired!</string>
+    <string name="label_laugh">Laugh!</string>
+    <string name="label_play">Play!</string>
+    <string name="info_turing">"He was the most important mathematician of the second world war. He helped to break the German's Enigma code at Blatchley Park, by designing a computer to decipher the German messages called the Bombe. The most important effects of this revolutionary invention were:\n - Shortening the length of the war: by decoding the German's messages Blatchley Park's team was able to identify the position of all Nazi's boats so the Royal Navy was able to protect English naval fleet from u-boats's attacks.\n - Saving millions lives: the avoided attacks permit a lot of people to stay in life. Turing's team, on the other hand, had to avoid that German discover that  Enigma had been decrypted. An electromechanical device that helped the code-breakers to calculate the key of the day the German were using on their Enigma machine.Using a menu provided by the codebreaking team from a crib (plaintext that corresponded to ciphertext), the Bombe operators could quickly set up the machine and let it calculate possible Enigma settings.\n  After the war Alan Turing came up with Turing Test, a method to test artificial intelligence.Persecuted for homosexual acts, he committed suicide in 1954.\n"</string>
+    <string name="label_quote">Quote</string>
+    <string name="name_turing">Alan Turing</string>
+</resources>
