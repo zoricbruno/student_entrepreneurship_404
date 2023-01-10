@@ -58,6 +58,10 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     def okhttp_version = "3.10.0"
     implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    def ktor_version = '2.2.2'
+    implementation("io.ktor:ktor-client-android:$ktor_version")
+    implementation("io.ktor.serialization.gson:$ktor_version")
+    implementation("io.ktor:ktor-client-content-negotiation:$ktor_version")
     /***********************************************************************/
 
     implementation 'androidx.core:core-ktx:1.9.0'

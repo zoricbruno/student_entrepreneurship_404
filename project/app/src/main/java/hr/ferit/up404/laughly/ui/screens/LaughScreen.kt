@@ -18,11 +18,40 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import hr.ferit.up404.laughly.R
+import io.ktor.client.*
+import io.ktor.client.call.*
+import io.ktor.client.engine.android.*
+import io.ktor.client.plugins.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.client.request.*
+import kotlinx.coroutines.launch
 
 data class Joke(
     val setup: String,
     val punchline: String
 )
+
+class ApiService constructor() {
+
+    private val client = HttpClient(Android) {
+        install(DefaultRequest) {
+            headers.append("Content-Type", "application/json")
+        }
+        install(ContentNegotiation) {
+            gson{
+
+            }
+        }
+        engine {
+            connectTimeout = 100_000
+            socketTimeout = 100_000
+        }
+    }
+
+    suspend fun getJoke(): Joke {
+        return client.get("https://official-joke-api.appspot.com/random_joke").body()
+    }
+}
 
 @Composable
 fun LaughScreen(navController: NavHostController) {
@@ -35,7 +64,7 @@ fun LaughScreen(navController: NavHostController) {
             .padding(dimensionResource(id = R.dimen.padding_medium))
     ) {
         val coroutineScope = rememberCoroutineScope()
-        val joke by remember {
+        var joke by remember {
             mutableStateOf(
                 Joke(
                     "Two guys walk into a bar . . .",
@@ -53,7 +82,11 @@ fun LaughScreen(navController: NavHostController) {
             fontSize = 32.sp,
             textAlign = TextAlign.Center
         )
-        Button(onClick = { }) {
+        Button(onClick = {
+            coroutineScope.launch {
+                joke = ApiService().getJoke()
+            }
+        }) {
             Image(
                 painterResource(id = android.R.drawable.ic_menu_more),
                 contentDescription = "New joke icon",
