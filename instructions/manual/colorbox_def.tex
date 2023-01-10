@@ -1,0 +1,21 @@
+\usepackage[most]{tcolorbox}
+\definecolor{blue1}{HTML}{DEE3E9}
+\definecolor{blue2}{HTML}{F9F9F9}
+\definecolor{blue3}{HTML}{9EADC0}
+
+\newtcolorbox{mybox}[1]{%
+	arc=0pt,
+	outer arc=0pt,
+	top=0pt,
+	bottom=0pt,
+	left=0pt,
+	right=0pt,
+	boxrule=0.4pt,
+	breakable,
+	colback=blue2,
+	colframe=blue3,
+	colbacktitle=blue1,
+	coltitle=black,
+	fonttitle=\bfseries,
+	title=#1
+}

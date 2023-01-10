@@ -1,0 +1,183 @@
+\documentclass[11pt,a4paper,twoside]{article}
+\usepackage[left=20mm, right=20mm, top=20mm, bottom=20mm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage[T1]{fontenc}
+\usepackage[croatian]{babel}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{listings}
+
+\input{colorbox_def.tex}
+
+\input{kotlin_def.tex} 
+
+% Handling figures:
+\usepackage{graphicx}
+\graphicspath{{../figures/}}
+
+\begin{document}
+	
+\section{Uvod}
+
+	Razvoj mobilnih aplikacija jedna je od radionica u sklopu projekta Studentsko poduzetništvo - 404 koji se izvodi 2023. u suradnji Fakulteta elektrotehnike, računarstva i informacijskih tehnologija Osijek (FERIT), Fakulteta primijenjene matematike i informatike u Osijeku (MATHOS) te Ekonomskog fakulteta u Osijeku (EFOS). Cilj radionice jest pokazati učenicima osnovne koncepte razvoja mobilnih aplikacija s fokusom na platformu Android te ih potaknuti na samostalno učenje i istraživanje.
+	
+	Ovaj minijaturni priručnik prati aktivnosti radionice gdje će se kroz kreiranje nove Android aplikacije učenici upoznati s osnovnim pojmovima kao što su izgradnja korisničkog sučelja, povezivanje programskog koda i elemenata korisničkog sučelja, ali i sa složenijim elementima aplikacija poput uporabe senzora ili prikaza podataka dostupnih na Internetu. Aplikacija koja će biti izrađena sastoji se od tri zasebna ekrana, ekrana za inspiraciju koji će poslužiti za prolazak kroz osnove kreiranja korisničkog sučelja, ekrana za igru koji će poslužiti za upoznavanje sa senzorima te ekrana za šalu koji će poslužiti za dohvaćanje podataka s interneta i njihov prikaz. Svijet razvoja mobilnih aplikacija puno je širi od sadržaja koji pokriva radionica pa će u posljednjem poglavlju biti prikazane poveznice na vanjske resurse koje je moguće koristiti za samostalan rad i učenje. Za sve naknadne informacije i pitanja, slobodno se javite putem e-maila na bruno.zoric@ferit.hr.
+	
+\section{Instalacija alata}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics{install_01.png}
+	\caption{Instalacija Android Studija - 1. korak}
+	\label{fig:install_01}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{install_02.png}
+	\caption{Instalacija Android Studija - 2. korak}
+	\label{fig:install_02}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics{install_03.png}
+	\caption{Instalacija Android Studija - 3. korak}
+	\label{fig:install_03}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics{install_04.png}
+	\caption{Instalacija Android Studija - 3. korak}
+	\label{fig:install_03}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics{install_04.png}
+	\caption{Instalacija Android Studija - 4. korak}
+	\label{fig:install_04}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics{install_05.png}
+	\caption{Instalacija Android Studija - 5. korak}
+	\label{fig:install_05}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics{install_06.png}
+	\caption{Instalacija Android Studija - 6. korak}
+	\label{fig:install_06}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{install_07.png}
+	\caption{Instalacija Android Studija - 7. korak}
+	\label{fig:install_07}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{install_08.png}
+	\caption{Instalacija Android Studija - 8. korak}
+	\label{fig:install_08}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{install_09.png}
+	\caption{Instalacija Android Studija - 9. korak}
+	\label{fig:install_09}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{install_10.png}
+	\caption{Instalacija Android Studija - 10. korak}
+	\label{fig:install_10}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{install_11.png}
+	\caption{Instalacija Android Studija - 11. korak}
+	\label{fig:install_11}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{install_12.png}
+	\caption{Instalacija Android Studija - 12. korak}
+	\label{fig:install_12}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{install_13.png}
+	\caption{Instalacija Android Studija - 13. korak}
+	\label{fig:install_13}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{install_14.png}
+	\caption{Instalacija Android Studija - 14. korak}
+	\label{fig:install_14}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{install_15.png}
+	\caption{Instalacija Android Studija - 15. korak}
+	\label{fig:install_15}	
+\end{figure}
+
+\section{Kreiranje projekta}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{new_project_01.png}
+	\caption{Kreiranje novog projekta - 1. korak}
+	\label{fig:new_project_01}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{new_project_02.png}
+	\caption{Kreiranje novog projekta - 2. korak}
+	\label{fig:new_project_02}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{new_project_03.png}
+	\caption{Kreiranje novog projekta - 3. korak}
+	\label{fig:new_project_03}	
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{new_project_04.png}
+	\caption{Kreiranje novog projekta - 4. korak}
+	\label{fig:new_project_04}	
+\end{figure}
+
+\section{Uvođenje ekrana i navigacija}
+\section{Značajka - inspiracija}
+\section{Značajka - igra}
+\section{Značajka - šala}
+\section{Što dalje?}
+
+	
+	
+	content...
+	\begin{lstlisting}[caption={Simple code listing.}, label={lst:example1}, language=Kotlin]
+		// this is a simple code listing:
+		println("hello kotlin from latex")
+	\end{lstlisting}
+\end{document}
