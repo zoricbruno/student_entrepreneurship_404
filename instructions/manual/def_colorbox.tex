@@ -1,0 +1,38 @@
+\usepackage[most]{tcolorbox}
+\definecolor{blue1}{HTML}{DEE3E9}
+\definecolor{blue2}{HTML}{F9F9F9}
+\definecolor{blue3}{HTML}{9EADC0}
+
+\definecolor{solarized@red}{HTML}{bc658d}
+\definecolor{solarized@blue}{HTML}{4677CB}
+\definecolor{solarized@green}{HTML}{82c4c3}
+\definecolor{solarized@orange}{HTML}{f9d89c}
+\definecolor{solarized@background}{HTML}{fbfbfb}
+
+\newenvironment{infoBox}
+{
+	\begin{tcolorbox}[colback=solarized@background,colframe=solarized@green,enlarge top by=6pt, enlarge bottom by=6pt, title=Informacija]
+	}{
+	\end{tcolorbox}	
+}
+
+\newenvironment{warningBox}
+{
+	\begin{tcolorbox}[colback=solarized@background,colframe=solarized@orange,enlarge top by=6pt, enlarge bottom by=6pt, title=Upozorenje]
+	}{
+	\end{tcolorbox}
+}
+
+\newenvironment{errorBox}
+{
+	\begin{tcolorbox}[colback=solarized@background,colframe=solarized@red,enlarge top by=6pt, enlarge bottom by=6pt, title=Mogući problem]
+	}{	
+	\end{tcolorbox}
+}
+
+\newenvironment{comicBox}
+{
+	\begin{tcolorbox}[colback=solarized@background,colframe=solarized@blue,enlarge top by=6pt, enlarge bottom by=6pt, title=Comic]
+	}{	
+	\end{tcolorbox}
+}
