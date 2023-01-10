@@ -1,4 +1,4 @@
-package hr.ferit.up404.laughly
+package hr.ferit.up404.laughly.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
-import hr.ferit.up404.laughly.ui.screens.*
+import hr.ferit.up404.laughly.ui.screens.MainScreen
 import hr.ferit.up404.laughly.ui.theme.LaughlyTheme
 
 class MainActivity : ComponentActivity() {

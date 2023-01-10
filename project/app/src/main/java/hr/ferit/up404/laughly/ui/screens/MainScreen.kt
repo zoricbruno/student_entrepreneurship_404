@@ -11,8 +11,8 @@ fun MainScreen() {
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = Screen.Home.route) {
         composable(Screen.Home.route) { HomeScreen(navController) }
-        composable(Screen.Laugh.route) { LaughScreen(navController) }
-        composable(Screen.Inspire.route) { InspireScreen(navController) }
-        composable(Screen.Play.route) { PlayScreen(navController) }
+        composable(Screen.Laugh.route) { LaughScreen() }
+        composable(Screen.Inspire.route) { InspireScreen() }
+        composable(Screen.Play.route) { PlayScreen() }
     }
 }
