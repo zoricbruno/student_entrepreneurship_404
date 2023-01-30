@@ -1,15 +1,39 @@
 
 \usepackage{listings}
 
-\lstset{
+\lstset
+{
+	basicstyle=\tiny,
 	numbers=left,
 	numbersep=5pt,
-	numberstyle=\small\color{gray},
+	numberstyle=\tiny\color{gray},
 	showspaces=false,
-	tabsize=1
+	tabsize=2,
+	columns=fullflexible,
+	frame=tb,
+	breaklines=true,
+	postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+	xleftmargin=17pt,
+	xrightmargin=6pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+    showstringspaces=false,
 }
 
-\lstdefinelanguage{Kotlin}{
+\lstdefinelanguage{XML}
+{
+	morestring=[b]",
+	morestring=[s]{>}{<},
+	morecomment=[s]{<?}{?>},
+	stringstyle=\color{black},
+	identifierstyle=\color{black},
+	keywordstyle=\color{cyan},
+	morekeywords={xmlns,version,type,ma-id}% list your attributes here
+}
+
+\lstdefinelanguage{Kotlin}
+{
 	comment=[l]{//},
 	commentstyle={\color{gray}\ttfamily},
 	emph={filter, first, firstOrNull, forEach, lazy, map, mapNotNull, println},
