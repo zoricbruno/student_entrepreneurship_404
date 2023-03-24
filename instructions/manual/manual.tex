@@ -13,7 +13,16 @@
 \usepackage{graphicx}
 \graphicspath{{../figures/}}
 
+\usepackage{pdfpages}
+\usepackage{tocloft}
+
 \begin{document}
+
+\includepdf{bg.pdf}
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\tableofcontents
+\newpage
 	
 \section{Uvod}
 
@@ -298,14 +307,20 @@ class MainActivity : ComponentActivity() {
 	}
 }
 \end{lstlisting}
+Primjer početnog ekrana aplikacije dan je slikom \ref{fig:HomeScreen}.
 
-% TODO: Dodati link na jetpack compose.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{HomeScreen}
+	\caption{Primjer početnog ekrana aplikacije}	
+	\label{fig:HomeScreen}
+\end{figure}
 
 \section{Značajka - inspiracija}
 
 Kao prvu aktivnost koju nudimo unutar naše aplikacije, omogućit ćemo korisnicima da se inspiriraju poznatom osobom koja je za nas inspirativna. Na radionici možete samostalno odabrati osobu koju želite, prikupiti potrebne materijale i zatim iskoristiti upute i kod dan na ovim stranicama kako biste aplikaciju učinili osobnijom. 
 
-Krenut ćemo s informacijom da je fiksni sadržaj u Android aplikacijama izdvojen u datoteke za specifične oblike sadržaja. Primjerice, tekst koji prikazujete na gumbima, dimenzije margina ili slike koje predstavljaju fiksne grafičke elemente u aplikacijama izdvajaju se izvan koda aplikacije. Razlog je taj što iz brojnih razloga u nekim situacijama trebate drugačiji izgled ili prikaz. Primjerice, korisnici u Njemačkoj očekuju sadržaj na njemačkom jeziku, dok bi stanovnicima Hrvatske to predstavljalo problem i oni očekuju hrvatski jezik. Svaka vrijednost koju kanite rabiti predstavljena je resursom koji ima jedinstveni identifikator. Ovo omogućuje programeru da koristi resurs preko identifikatora, a prepusti sustavu da, ovisno o postavkama sustava, brine o tome koji će se konkretan resurs učitati. Tekst se tako izdvaja u datoteku \texttt{strings.xml} koja je smještena u direktorij \texttt{res/values}. Cjelokupni izgled ove datoteke dan je izlistanjem \ref{lst:strings} i uključuje tekst za cijelu aplikaciju.
+Krenut ćemo s informacijom da je fiksni sadržaj u Android aplikacijama izdvojen u datoteke za specifične oblike sadržaja. Primjerice, tekst koji prikazujete na gumbima, dimenzije margina ili slike koje predstavljaju fiksne grafičke elemente u aplikacijama izdvajaju se izvan koda aplikacije. Razlog je taj što iz brojnih razloga u nekim situacijama trebate drugačiji izgled ili prikaz. Primjerice, korisnici u Njemačkoj očekuju sadržaj na njemačkom jeziku, dok bi stanovnicima Hrvatske to predstavljalo problem i oni očekuju hrvatski jezik. Svaka vrijednost koju kanite rabiti predstavljena je resursom koji ima jedinstveni identifikator. Ovo omogućuje programeru da koristi resurs preko identifikatora, a prepusti sustavu da, ovisno o postavkama sustava, brine o tome koji će se konkretan resurs učitati. Tekst se tako izdvaja u datoteku \texttt{strings.xml} koja je smještena u direktorij \texttt{res/values}. Cjelokupni izgled ove datoteke dan je izlistanjem \ref{lst:resources-strings} i uključuje tekst za cijelu aplikaciju.
 
 \begin{lstlisting}[caption={Resursi - values/strings.xml}, label={lst:resources-strings}, language=Kotlin]
 <resources>
@@ -326,7 +341,7 @@ Krenut ćemo s informacijom da je fiksni sadržaj u Android aplikacijama izdvoje
 </resources>
 \end{lstlisting}
 
-Sadržaj koji će biti prikazan u Android aplikacijama uobičajeno se ne definira unutar ekrana koji definira kako će sadržaj izgledati (razdvajanje prezentacije od implementacije). Za potrebe razdvajanja ovog sadržaja, ali i ostvarivanje brojnih drugih prednosti, koriste se komponente koje se nazivaju \texttt{ViewModel}. Tijekom radionice kreirat ćemo odgovarajuće \texttt{ViewModel} komponente za svaki ekran aplikacije. Za \texttt{InspireScreen} taj je \texttt{ViewModel} dan izlistanjem \ref{lst:vm-inspire}. Može se uočiti kako taj \texttt{ViewModel} referencira resurse koje ćemo unutar ekrana iskoristiti za prikaz sadržaja te omogućuje da se dohvati resurs nasumičnog citata u bilo kojem trenutku kroz funkciju \texttt{getQuote()}.
+Sadržaj koji će biti prikazan u Android aplikacijama uobičajeno se ne definira unutar ekrana koji definira kako će sadržaj izgledati (razdvajanje prezentacije od implementacije). Za potrebe razdvajanja ovog sadržaja, ali i ostvarivanje brojnih drugih prednosti, koriste se komponente koje se nazivaju \texttt{ViewModel}. Tijekom radionice kreirat ćemo odgovarajuće \texttt{ViewModel} komponente za svaki ekran aplikacije. Za \texttt{InspireScreen} taj je \texttt{ViewModel} dan izlistanjem \ref{lst:viewmodel-inspire}. Može se uočiti kako taj \texttt{ViewModel} referencira resurse koje ćemo unutar ekrana iskoristiti za prikaz sadržaja te omogućuje da se dohvati resurs nasumičnog citata u bilo kojem trenutku kroz funkciju \texttt{getQuote()}.
 
 \begin{lstlisting}[caption={Inspirirajući \texttt{view model}- InspireViewModel.kt}, label={lst:viewmodel-inspire}, language=Kotlin]
 class InspireViewModel : ViewModel() {
@@ -401,6 +416,15 @@ fun InspireScreen(viewModel: InspireViewModel = viewModel()) {
 	}
 }
 \end{lstlisting}
+
+Primjer izgleda gotovog ekrana za prikaz inspirirajuće osobe dan je slikom \ref{fig:InspiredScreen}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{InspiredScreen}
+	\caption{Primjer ekrana za inspiraciju}	
+	\label{fig:InspiredScreen}
+\end{figure}
 
 \section{Značajka - igra}
 
@@ -554,6 +578,15 @@ class Laughly : Application() {
 		<!-- ... -->
 \end{lstlisting}
 
+Primjer ekrana za igranje dan je slikom \ref{fig:PlayScreen}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{PlayScreen}
+	\caption{Primjer ekrana za igru}	
+	\label{fig:PlayScreen}
+\end{figure}
+
 \section{Značajka - šala}
 
 Konačna funkcionalnost aplikacije bit će nasmijavanje korisnika. Ovo ćemo postići tako da korisnik ode na ekran za smijanje, klikne gumb i time dobije prikaz nasumične šale. Bit će riječ o jednostavnim šalama, na engleskom jeziku, koje se sastoje od dva dijela - postavke (engl. \textit{setup}) i vica (engl. \textit{punchline}). Kako ne bismo sami sastavljali brojne viceve, poslužit ćemo se servisom koji je dostupan na Internetu i od kojeg ćemo zatražiti da nam da novi vic, svaki put kada mi pošaljemo upit prema njemu. Upit ćemo izvesti putem protokola HTTP, a odgovor ćemo dobiti zapakiran u oblik JSON. Ove Vas kratice ne trebaju pretjerano brinuti, riječ je o standardiziranim načinma i formatima komunikacije između aplikacija. Sam servis smješten je na adresi \url{https://official-joke-api.appspot.com/random_joke}. Možete pokušati na navedenu adresu otići uporabom internetskog preglednika i primijetit ćete da svaki put kada osvježite stranicu, dobijete novu šalu. S obzirom da uvodimo pojmove poput šale i servisa za šale, krenut ćemo implementirati s te strane. Naučit ćemo naš programski jezik te pojmove tako što ćemo mu ih opisati korištenjem klasa. U paket \texttt{laughing} dodat ćemo dvije nove Kotlin klase, \texttt{Joke} i \texttt{JokeApiService}.
@@ -642,6 +675,15 @@ class LaughViewModel : ViewModel() {
 	}
 }
 \end{lstlisting}
+
+Primjer ekrana za šalu dan je slikom \ref{fig:LaughScreen}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{LaughScreen}
+	\caption{Primjer ekrana za šalu}	
+	\label{fig:LaughScreen}
+\end{figure}
 
 \section{Što dalje?}
 
